@@ -12,6 +12,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.get('/products', (req, res) => {
     const currentData = readFileSync('./links.json');
+    if (!req.url) {
+        res.send('Wrong URL');
+    }
     res.json(currentData);
 })
 
@@ -29,5 +32,5 @@ app.get('/api/product/:id', (req, res) => {
 
 
 app.listen(PORT, () => {
-    
+    console.log(`Localhost is running at: http://localhost:${PORT}`);
 });
