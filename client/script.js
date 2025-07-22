@@ -1,14 +1,17 @@
-async function fetchDatas() {
+async function fetchData(url) {
     try {
-        const response = await fetch(`/api/products`);
+        const response = await fetch(url);
         if (!response.ok) throw new Error("Fetch failed", response.status);
 
         const data = await response.json();
         console.log(data);
+        return data;
     } catch (error) {
         console.error("Could not fetch:", error.message);
     }
+    
 }
+
 
 function addNavButtons () {
     const navBarDiv = document.getElementById('header');
@@ -37,9 +40,42 @@ function showHomePage(){
     document.getElementById('product-list').style.display = 'block';
 }
 
+function creatProductCard(product){
+    return `
+    <div id="slide-container" style="background-image: url(${product.img});>
+                    <div class="img-holder">
+                        <div class="info-holder">
+                            <div class="info-item-title">
+                                <h3>Title</h3>
+                                <p id="info-title">${product.title}</p>
+                            </div>
+                            <div class="info-item-dimension">
+                                <h3>Dimension</h3>
+                                <p id="indo-dimension">${product.dimension}</p>
+                            </div>
+                            <div class="info-item-technique">
+                                <h3>Technique</h3>
+                                <p id="info-technique">${product.technique}</p>
+                            </div>
+                            <div class="info-item-price">
+                                <h3>Price</h3>
+                                <p id="info-item">${product.price}</p>
+                            </div>
+                        </div>
+                    </div>
+    `
+}
+async function fetchProductHTML(productID) {
+    const product = await fetchData(`/api/product/${productID}`);
+    const resultHtml = creatProductCard(product);
+    return resultHtml;
+}
 async function main() {
-  await fetchDatas();  
+  await fetchData('/api/products');
   addNavButtons();
+  const productDiv = document.getElementById('slideshow');
+  productDiv.innerHTML = await fetchProductHTML('1'); 
+  showHomePage();
 
 }
 main();
