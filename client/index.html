@@ -5,11 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Picture Shop</title>
     <style>
-        
+        body {
+            padding: 0;
+            margin: 0;
+            max-width: 100vw;
+            max-height: 100vh;
+
+        }
+        #root {
+            padding: 0;
+            margin: 0;
+        }
+        #header {
+            padding: 15px;
+            margin: 0;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            background: #eaeaea;
+            height: 85px;
+            width: 100vw;
+        }
+        #silde-container {
+            grid-area: content;
+            height: 100vh;
+        }
+        .hidden {
+            display: none;
+        }
+        footer {
+            width: 100vw;
+            height: 85px;
+            background: #333;
+            padding: 15px;
+            margin: 0;
+            bottom: 0;
+            position: fixed;
+        }
+
+        #homeButton, #cart, #admin-public {
+            margin: 0;
+            padding: 25px;
+            font-size: calc(0.5rem + 1vw);
+            border: none;
+            border-radius: 25px;
+            transition: all ease-in-out 0.4s;
+            box-shadow: 0 2px 5px #333;
+        }
+        #homeButton:hover, #cart:hover, #admin-public:hover {
+            cursor: pointer;
+            border: #333;
+            box-shadow: 0 0 1px #333;
+        }
+        .img-holder {
+            padding: 0;
+            margin: 0;
+            height: 85vh;
+            width: 100vw;
+            background-image: url(https://drive.google.com/file/d/1kkEb9qx8SrOdpx_DWLMyyp3l_c8tqr1U/view?usp=drive_link);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
     <script src="./script.js" defer type="module"></script>
 </head>
 <body>
+    <div id="root">
+        <header>
+            <nav id="header">
+
+            </nav>    
+        </header>        
+        <main>
+            <section id="slideshow">
+                <div id="slide-container">
+                    <div class="img-holder">
+                        <div class="info-holder">
+                            <div class="info-item">
+                                <h3>Title 1</h3>
+                                <p>Info</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>Title 2</h3>
+                                <p>Info</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>Title 3</h3>
+                                <p>Info</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>Title 4</h3>
+                                <p>Info</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="product-list">
+
+            </section>
+            <section id="cart-section">
+                
+            </section>
+        </main>
+        <footer>
+            
+        </footer>
+
+
+
+
+        </div>
+
+    </div>
     
 </body>
 </html>
