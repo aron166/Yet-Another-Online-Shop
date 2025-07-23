@@ -74,7 +74,12 @@
             bottom: 0;
             width: 600px;
             height: 120px;
-            background: #eaeaea;
+            background: #fefefe;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px #333;
 
         }
         #slide-container {
@@ -84,13 +89,15 @@
           height: 100vh;
           background: #cfe;
           display: flex;
-            align-items: center;
-            justify-content: center;
+          align-items: center;
+          justify-content: center;
         }
         .info-item-title, .info-item-dimension, .info-item-technique, .info-item-price {
             display: inline-block;
-            padding: 15px;
+            padding: 0;
             margin: 0;
+            text-align: center;
+            width: 25%;
         }
     </style>
     <script src="/static/script.js" defer type="module"></script>
