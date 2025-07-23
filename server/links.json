@@ -11,7 +11,7 @@
     "id":"2",
     "title": "Élet flash",
     "dimensions": "30 x 30",
-    "img": "img/eletflash.jpg",
+    "img": "../static/img/eletflash.jpg",
     "technique": "digital",
     "price": null
     },
@@ -19,7 +19,7 @@
     "id":"3",
     "title": "Elvonó",
     "dimensions": "30 x 30",
-    "img": "https://drive.google.com/file/d/1ck3527IfKbvuet4jzYcnVYKOGNZB-ck1/view?usp=drive_link",
+    "img": "../static/img/elvono.jpg",
     "technique": "digital",
     "price": null
     }

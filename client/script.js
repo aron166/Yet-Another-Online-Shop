@@ -40,7 +40,7 @@ function showHomePage(){
     document.getElementById('product-list').style.display = 'block';
 }
 
-function creatProductCard(product){
+function createSlideShowCard(product){
     return `
     <div id="slide-container" style="background-image: url(${product.img});>
                     <div class="img-holder">
@@ -65,11 +65,30 @@ function creatProductCard(product){
                     </div>
     `
 }
+
 async function fetchProductHTML(productID) {
     const product = await fetchData(`/api/product/${productID}`);
-    const resultHtml = creatProductCard(product);
+    const resultHtml = createSlideShowCard(product);
     return resultHtml;
 }
+function createProductCard(product){
+    const root = document.querySelector('.product-container');
+    const img = document.createElement('img');
+    img.src = product.img;
+    img.classList.add('product-item')
+    const button = document.createElement('button');
+    button.classList.add('addCartBtn');
+    root.appendChild(img);
+    root.appendChild(button);
+}
+
+async function productListFetching() {
+    const products = await fetchData('/api/products');
+    for (const product of products){
+        createProductCard(product);
+    }
+}
+
 async function main() {
   await fetchData('/api/products');
   addNavButtons();
