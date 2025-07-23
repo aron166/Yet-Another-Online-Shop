@@ -122,10 +122,18 @@ async function fetchCart() {
     console.log(cart);
     
 }
+function navBarFunctionality(){
+    const cartBtn = document.getElementById('cart')
+    cartBtn.addEventListener('click', showcart);
+    const homeBtn = document.getElementById('homeButton')
+    homeBtn.addEventListener('click', showHomePage);
+}
+
 
 async function main() {
   await fetchData('/api/products');
   addNavButtons();
+   navBarFunctionality();
   const productDiv = document.getElementById('slideshow');
   productDiv.innerHTML = await fetchProductHTML('1'); 
   await productListFetching();

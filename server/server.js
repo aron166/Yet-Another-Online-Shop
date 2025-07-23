@@ -52,6 +52,17 @@ app.post('/api/cart', (req, res) => {
 app.get('/api/checkout',(req, res) => {
     res.send(cart);
 })
+app.delete('/api/cart/del/:id', (req, res) => {
+    cart.filter()
+    const productToDel = cart.find((p) => {
+        return p.id === req.body.id})
+        if(!productToDel){
+            res.status(404).send("Product with this id not found");
+        }
+        const index = cart.indexOf(productToDel)
+        cart.splice(index, 1);
+
+})
 
 
 
