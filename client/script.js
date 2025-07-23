@@ -51,7 +51,7 @@ function createSlideShowCard(product){
                             </div>
                             <div class="info-item-dimension">
                                 <h3>Dimension</h3>
-                                <p id="indo-dimension">${product.dimension}</p>
+                                <p id="indo-dimension">${product.dimensions}</p>
                             </div>
                             <div class="info-item-technique">
                                 <h3>Technique</h3>
