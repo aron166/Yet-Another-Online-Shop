@@ -10,7 +10,6 @@ const app = express();
 app.use(express.json());
 const PORT = 3000;
 app.use('/static', express.static('../client'));
-
 const cart = [];
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
