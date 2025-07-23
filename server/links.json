@@ -3,7 +3,7 @@
     "id":"1",
     "title": "Az utálat fárasztó",
     "dimensions": "30 x 30",
-    "img": "img/az_utalat_faraszto.jpg",
+    "img": "../static/img/az_utalat_faraszto.jpg",
     "technique": "digital",
     "price": null
     },
