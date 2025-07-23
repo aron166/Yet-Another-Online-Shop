@@ -75,7 +75,8 @@ function createProductCard(product){
     const root = document.getElementById('product-container');
     // console.log(product);
     const item = `
-    <div class="product-item" style="background-image: url(${product.img})" >
+    <div class="product-item" value="${product.id}">
+        <div class="product-image" style="background-image: url(${product.img})"></div>
         <button class="addCartBtn">Add to cart</button>
     </div>`
     root.insertAdjacentHTML("afterbegin", item);
