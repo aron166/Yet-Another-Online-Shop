@@ -72,8 +72,8 @@ async function fetchProductHTML(productID) {
     return resultHtml;
 }
 function createProductCard(product){
-    const root = document.querySelector('.product-container');
-    const img = document.createElement('img');
+    const root = document.querySelectorAll('.product-container');
+    const img = document.createElement('div');
     img.src = product.img;
     img.classList.add('product-item')
     const button = document.createElement('button');
