@@ -4,7 +4,6 @@ async function fetchData(url) {
         if (!response.ok) throw new Error("Fetch failed", response.status);
 
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error("Could not fetch:", error.message);
@@ -73,10 +72,9 @@ async function fetchProductHTML(productID) {
 }
 function createProductCard(product){
     const root = document.getElementById('product-container');
-    // console.log(product);
     const item = `
     <div class="product-item" style="background-image: url(${product.img})" >
-        <button class="addCartBtn">Add to cart</button>
+        <button class="addCartBtn" data-product-id="${product.id}">Add to cart</button>
     </div>`
     root.insertAdjacentHTML("afterbegin", item);
 }
@@ -88,6 +86,41 @@ async function productListFetching() {
         createProductCard(product);
     }
 }
+async function addToCart(productId) {
+    let allProducts = await fetchData('/api/products');
+    let products = await JSON.parse(allProducts);
+    const product = products.find((p)=>{
+        return p.id === productId;
+    })
+    fetch("/api/cart", {
+        method: "POST",
+        body: JSON.stringify({
+        id: product.id,
+        title: product.title,
+        quantity: 1
+
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+});
+    
+    
+}
+async function addingBtnFunctionality() {
+    const root = document.getElementById('product-container')
+    const addToCartBtns = root.querySelectorAll('button');
+    for (const btn of addToCartBtns){
+        btn.addEventListener('click', async () => {
+            await addToCart(btn.dataset.productId);
+        } )
+    }
+}
+async function fetchCart() {
+    const cart = await fetchData('/api/checkout');
+    console.log(cart);
+    
+}
 
 async function main() {
   await fetchData('/api/products');
@@ -95,6 +128,8 @@ async function main() {
   const productDiv = document.getElementById('slideshow');
   productDiv.innerHTML = await fetchProductHTML('1'); 
   await productListFetching();
+  addingBtnFunctionality()
+  fetchCart()
   showHomePage();
 
 
