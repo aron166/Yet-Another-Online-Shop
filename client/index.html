@@ -23,7 +23,7 @@
             justify-content:space-around;
             align-items: center;
             background: #eaeaea;
-            height: 85px;
+            height: 6vh;
             width: 100vw;
         }
         main {
@@ -40,7 +40,7 @@
         }
         footer {
             width: 100vw;
-            height: 85px;
+            height: 3vh;
             background: #333;
             padding: 15px;
             margin: 0;
@@ -63,9 +63,7 @@
             box-shadow: 0 0 1px #333;
         }
         .img-holder {
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
+            background-size: 10%;
             width: 100vw;
             height: 80vh;
             
@@ -86,11 +84,13 @@
           padding: 0;
           margin: 0;
           width: 100vw;
-          height: 100vh;
-          background: #cfe;
+          height: 80vh;
           display: flex;
-          align-items: center;
+          align-items: end;
           justify-content: center;
+          background-size: contain;
+          background-position: center;
+            background-repeat: no-repeat;
         }
         .info-item-title, .info-item-dimension, .info-item-technique, .info-item-price {
             display: inline-block;
@@ -98,6 +98,24 @@
             margin: 0;
             text-align: center;
             width: 25%;
+        }
+
+        .product-container {
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 80vh;
+            display: grid;
+            grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+            grid-auto-flow: row;
+            grid-gap: 25px;
+
+        }
+        .product-item {
+            padding: 0;
+            margin: 0;
+            background: #333;
+            height: 250px;
         }
     </style>
     <script src="/static/script.js" defer type="module"></script>
@@ -135,7 +153,21 @@
                 </div>
             </section>
             <section id="product-list">
-
+                <h2>Pictures:</h2>
+                <div class="product-container">
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                </div>
             </section>
             <section id="cart-section">
                 

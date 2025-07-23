@@ -65,6 +65,10 @@ function creatProductCard(product){
                     </div>
     `
 }
+function createProductList() {
+
+}
+
 async function fetchProductHTML(productID) {
     const product = await fetchData(`/api/product/${productID}`);
     const resultHtml = creatProductCard(product);
