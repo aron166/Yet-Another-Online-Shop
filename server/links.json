@@ -22,6 +22,29 @@
     "img": "../static/img/elvono.jpg",
     "technique": "digital",
     "price": null
-    }
-
+    },
+    {
+        "id":"4",
+        "title": "Kilét",
+        "dimensions": "30 x 30",
+        "img": "../static/img/kilet.jpg",
+        "technique": "digital",
+        "price": null
+        },
+        {
+            "id":"5",
+            "title": "Rendszer",
+            "dimensions": "30 x 30",
+            "img": "../static/img/rendszer.jpg",
+            "technique": "digital",
+            "price": null
+            },
+            {
+                "id":"6",
+                "title": "Szafari",
+                "dimensions": "30 x 30",
+                "img": "../static/img/szafari.jpg",
+                "technique": "digital",
+                "price": null
+                }
 ]

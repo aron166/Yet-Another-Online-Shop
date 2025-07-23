@@ -73,7 +73,8 @@ async function fetchProductHTML(productID) {
 function createProductCard(product){
     const root = document.getElementById('product-container');
     const item = `
-    <div class="product-item" style="background-image: url(${product.img})" >
+    <div class="product-item" value="${product.id}">
+        <div class="product-image" style="background-image: url(${product.img})"></div>
         <button class="addCartBtn" data-product-id="${product.id}">Add to cart</button>
     </div>`
     root.insertAdjacentHTML("afterbegin", item);
