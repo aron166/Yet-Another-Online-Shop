@@ -50,7 +50,7 @@ app.post('/api/cart', (req, res) => {
     }
 })
 app.get('/api/checkout',(req, res) => {
-    res.send(cart.json());
+    res.send(cart);
 })
 
 

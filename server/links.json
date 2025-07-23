@@ -1,6 +1,6 @@
  [
     {
-    "id":"1",
+    "id": "1",
     "title": "Az utálat fárasztó",
     "dimensions": "30 x 30",
     "img": "../static/img/az_utalat_faraszto.jpg",
@@ -16,7 +16,7 @@
     "price": null
     },
     {
-    "id":"3",
+    "id": "3",
     "title": "Elvonó",
     "dimensions": "30 x 30",
     "img": "../static/img/elvono.jpg",
