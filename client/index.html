@@ -273,6 +273,39 @@
             font-size: calc(0.5rem + 0.5vw);
             text-wrap: nowrap;
         }
+        .cart-main {
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-auto-rows: max-content;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .cart-container {
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 250px, 3fr;
+            grid-gap: 25px;
+            width: 100vw;
+            height: 100vh;
+        }
+        .cart-item {
+            padding: 0;
+            margin: 0;
+            min-height: 250px;
+            min-width: 250px;
+        }
+        .cart-img {
+            height: 250px;
+            width: 250px;
+            background: #333;
+        }
+        .cart-text {
+            min-height: 250px;
+            background: #cfe;
+        }
     </style>
     <script src="/static/script.js" defer type="module"></script>
 </head>
@@ -314,7 +347,35 @@
                 </div>
             </section>
             <section id="cart-section">
-                
+                <h2>Cart:</h2>
+                <div class="cart-main">
+                    <div class="cart-container">
+                        <div class="cart-item">
+                            <div class="cart-img"></div>
+                            <div class="cart-text"></div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-img"></div>
+                            <div class="cart-text"></div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-img"></div>
+                            <div class="cart-text"></div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-img"></div>
+                            <div class="cart-text"></div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-img"></div>
+                            <div class="cart-text"></div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
         <footer>
