@@ -30,7 +30,9 @@ function addNavButtons () {
  function showcart() {
   const sections = document.querySelectorAll("section");
   sections.forEach(sec => sec.style.display = "none");
-  document.getElementById('cart').style.display = "block";
+  const cartPage = document.getElementById('cart-section');
+  cartPage.style.display = 'block';
+  displayCartPage()
 }
 function showHomePage(){
     const section = document.querySelectorAll("section");
@@ -88,16 +90,15 @@ function createProductCard(product){
     root.insertAdjacentHTML("afterbegin", item);
 }
 
-async function productListFetching() {
-    let products = await fetchData('/api/products');
-    products = JSON.parse(products)
+async function productListFetching(allProducts) {
+    let products = await allProducts;
     for (const product of products){
         createProductCard(product);
     }
 }
 async function addToCart(productId) {
     let allProducts = await fetchData('/api/products');
-    let products = await JSON.parse(allProducts);
+    let products = await allProducts;
     const product = products.find((p)=>{
         return p.id === productId;
     })
@@ -127,18 +128,59 @@ async function addingBtnFunctionality() {
 }
 async function fetchCart() {
     const cart = await fetchData('/api/checkout');
-    console.log(cart);
+    console.log('Fetch card function', cart);
+    return cart;
     
+
+    
+}
+function navBarFunctionality(){
+    const cartBtn = document.getElementById('cart')
+    cartBtn.addEventListener('click', showcart);
+    const homeBtn = document.getElementById('homeButton')
+    homeBtn.addEventListener('click', showHomePage);
+}
+function createCartItem(item){
+    const rootContainer = document.querySelector('.cart-container');
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+    const img = document.createElement('img')
+    img.src = item.img;
+    const title = document.createElement('h4');
+    title.textContent = item.title;
+    const deleteButton = document.createElement('button');
+    deleteButton.id = item.id;
+    deleteButton.textContent = 'Remove'
+    cartItem.append(img, title, deleteButton);
+    rootContainer.appendChild(cartItem)
+    console.log('Cart div?:', JSON.stringify(cartItem));
+
+}
+async function displayCartPage(){
+    const cartPage = document.querySelector('.cart-container');
+    cartPage.innerHTML = '';
+    let cart = await fetchCart();
+    console.log('FetchedCart', cart);
+    if (cart.length > 0){
+        for(const item of cart){
+            createCartItem(item);
+        }
+    } else {
+        const cartPage = document.querySelector('.cart-container');
+        const nothingMessage = document.createElement('h2');
+        nothingMessage.textContent = 'Your Cart Is Empty';
+        cartPage.appendChild(nothingMessage);
+    }
 }
 
 async function main() {
-  await fetchData('/api/products');
+  const products =  await fetchData('/api/products');
   addNavButtons();
+  navBarFunctionality();
   const productDiv = document.getElementById('slideshow');
   productDiv.innerHTML = await fetchProductHTML('1'); 
-  await productListFetching();
+  await productListFetching(products);
   addingBtnFunctionality()
-  fetchCart()
   showHomePage();
 
 
