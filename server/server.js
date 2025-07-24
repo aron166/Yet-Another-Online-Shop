@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/products', (req, res) => {
     const currentData = readFileSync('./links.json', 'utf-8');
-    res.json(currentData);
+    res.json(JSON.parse(currentData));
 })
 
 app.get('/api/product/:id', (req, res) => {
@@ -44,7 +44,7 @@ app.post('/api/cart', (req, res) => {
         for (let i = 0; i < quantity; i++){
             cart.push(productFromList)
         }
-        res.status(201).send(cart)
+        res.status(201).send(JSON.stringify(cart))
     } else {
         res.status(400).send('product not found or/and quantity cannot be less than zero')
     }
@@ -53,9 +53,8 @@ app.get('/api/checkout',(req, res) => {
     res.send(cart);
 })
 app.delete('/api/cart/del/:id', (req, res) => {
-    cart.filter()
     const productToDel = cart.find((p) => {
-        return p.id === req.body.id})
+        return p.id === req.params.id})
         if(!productToDel){
             res.status(404).send("Product with this id not found");
         }
