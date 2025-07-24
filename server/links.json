@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Az utálat fárasztó",
     "dimensions": "30 x 30",
-    "img": "../static/img/az_utalat_faraszto.jpg",
+    "img": "https://mega.nz/file/Eh8WHa7T#UXwrCbFAm3AjbsUUSNEIHJlZJkiPenyt20TGLXDhld0",
     "technique": "digital",
     "price": null
     },
@@ -11,7 +11,7 @@
     "id":"2",
     "title": "Élet flash",
     "dimensions": "30 x 30",
-    "img": "../static/img/eletflash.jpg",
+    "img": "https://mega.nz/file/0sUQzAhT#-YC3kl5w8RIjF2I4bzMmR0S2YFWxd-hqBs00MNclRJY",
     "technique": "digital",
     "price": null
     },
