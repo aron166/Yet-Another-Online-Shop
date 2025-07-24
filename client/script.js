@@ -85,6 +85,11 @@ function createProductCard(product){
     const item = `
     <div class="product-item" value="${product.id}">
         <div class="product-image" style="background-image: url(${product.img})"></div>
+        <div class="product-datas">
+            <p><strong>Dimensions in cm:</strong> ${product.dimensions}</p>
+            <p><strong>Technique:</strong> ${product.technique}</p>
+            <p><strong>Price:</strong> ${product.price}</p>
+        </div>
         <button class="addCartBtn" data-product-id="${product.id}">Add to cart</button>
     </div>`
     root.insertAdjacentHTML("afterbegin", item);
@@ -147,7 +152,7 @@ function createCartItem(item){
     const img = document.createElement('img')
     img.src = item.img;
     const title = document.createElement('h4');
-    title.textContent = item.title;
+    title.textContent = 'Title: ' + item.title;
     const deleteButton = document.createElement('button');
     deleteButton.id = item.id;
     deleteButton.textContent = 'Remove'

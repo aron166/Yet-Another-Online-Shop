@@ -276,8 +276,9 @@
               display: grid;
               grid-template-areas: 
               'image'
+              'details'
               'button';
-              grid-template-rows: 3fr 65px;
+              grid-template-rows: 3fr 200px 65px;
               grid-auto-flow: row;
               grid-gap: 5px;
           }
@@ -313,6 +314,21 @@
               background: #00a9b2;
               box-shadow: 0 0 1px #333;
           }
+          .product-datas {
+            grid-area: details;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            padding-left: 2rem;
+            margin: 0;
+
+          }
+          .product-datas p {
+            font-size: calc(1rem + 0.5vw);
+            font-weight: 200;
+            display: block;
+            padding: 0;
+          }
   
           .info-item-title h3, .info-item-dimension h3, .info-item-technique h3, .info-item-price h3 {
               text-transform: uppercase;
@@ -324,15 +340,7 @@
               font-size: calc(0.5rem + 0.5vw);
               text-wrap: nowrap;
           }
-          .cart-main {
-              margin: 0;
-              padding: 0;
-              display: grid;
-              grid-auto-rows: auto;
-              width: 100vw;
-              height: 100vh;
-          }
-  
+
           .cart-container {
               padding: 0;
               margin: 0;
@@ -346,15 +354,31 @@
               padding: 0;
               margin: 0;
               height: 250px;
-              width: 100%;
+              width: 95%;
               display: flex;
-              justify-content: space-between;
+              justify-content: space-around;
+              background: #f3f3f3;
+              border-radius: 35px;
+              box-shadow: 0 2px 5px #333;
           }
           .cart-item img {
             width: 250px;
             height: 250px;
           }
-          .cart-text {
-              min-height: 250px;
-              background: #cfe;
+          .cart-item button {
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: none;
+            color: #fb2859;
+            font-size: calc(1rem + 1vw);
+            transition: all ease-in-out 0.65s;
+
+          }
+          .cart-item button:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            font-style: italic;
+            color: #771129;
+
           }
