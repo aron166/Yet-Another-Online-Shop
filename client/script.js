@@ -61,6 +61,14 @@ function createSlideShowCard(product){
                                 <p id="info-item">${product.price}</p>
                             </div>
                         </div>
+                        <span class="bullet-container">
+                            <div class="bullet"></div>
+                            <div class="bullet"></div>
+                            <div class="bullet"></div>
+                            <div class="bullet"></div>
+                            <div class="bullet"></div>
+                            <div class="bullet"></div>
+                            </span>
                     </div>
     `
 }
@@ -135,5 +143,4 @@ async function main() {
 
 
 }
-main();
-//window.addEventListener('load', main);
+window.addEventListener('load', main);

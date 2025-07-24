@@ -5,307 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Picture Shop</title>
 
+    <link rel="stylesheet" href="/static/styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <style>
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-
-        body {
-            padding: 0;
-            margin: 0;
-            max-width: 100vw;
-            max-height: 100vh;
-            font-family: 'Poppins', sans-serif;
-
-        }
-        #root {
-            padding: 0;
-            margin: 0;
-        }
-        #header {
-            padding: 15px;
-            margin: 0;
-            display: flex;
-            justify-content:space-around;
-            align-items: center;
-            background: #eaeaea;
-            height: 6vh;
-            width: 100vw;
-        }
-        main {
-            width: 100vw;
-            height: 100vh;
-        }
-        #slideshow {
-            top: 0;
-            height: 80vh;
-            width: 100vw;
-        }
-        .hidden {
-            display: none;
-        }
-        footer {
-            width: 100vw;
-            height: 3vh;
-            background: #333;
-            padding: 15px;
-            margin: 0;
-            bottom: 0;
-            position: fixed;
-        }
-
-        #homeButton, #cart, #admin-public {
-            margin: 0;
-            padding: 25px;
-            font-size: calc(0.5rem + 1vw);
-            border: none;
-            border-radius: 25px;
-            transition: all ease-in-out 0.4s;
-            box-shadow: 0 2px 5px #333;
-        }
-        #homeButton:hover, #cart:hover, #admin-public:hover {
-            cursor: pointer;
-            border: #333;
-            box-shadow: 0 0 1px #333;
-        }
-        .img-holder {
-            background-size: 10%;
-            width: 100vw;
-            height: 80vh;
-            
-        }
-        .info-holder {
-            bottom: 0;
-            width: 600px;
-            height: 120px;
-            background: #fefefe;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            border-radius: 15px;
-            box-shadow: 0 2px 5px #333;
-
-        }
-        #slide-container {
-          padding: 0;
-          margin: 0;
-          width: 100vw;
-          height: 80vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-size: contain;
-          background-position: center;
-            background-repeat: no-repeat;
-        }
-        .info-item-title, .info-item-dimension, .info-item-technique, .info-item-price {
-            display:inline-block;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-            width: 25%;
-        }
-
-        #product-container {
-            padding: 0;
-            margin: 0;
-            width: 100vw;
-            height: 80vh;
-            display: grid;
-            grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
-            grid-auto-flow: row;
-            grid-gap: 25px;
-
-        }
-        .product-item {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            display: grid;
-            grid-template-areas: 
-            'button'
-            'image';
-            grid-template-rows: 65px 3fr;
-            grid-auto-flow: row;
-            grid-gap: 5px;
-        }
-        .product-image {
-            grid-area: 'image';
-            align-self: stretch;
-            min-height: 350px;
-            min-width: 350px;
-            background-position: bottom;
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-        .addCartBtn {
-            grid-area: button;
-            margin: 0;
-            padding: 10px;
-            font-size: calc(0.5rem + 1vw);
-            border: none;
-            border-radius: 25px;
-            transition: all ease-in-out 0.4s;
-            box-shadow: 0 2px 5px #333;
-        }
-        .addCartBtn:hover {
-            cursor: pointer;
-            border: #333;
-            box-shadow: 0 0 1px #333;
-        }
-
-        .info-item-title h3, .info-item-dimension h3, .info-item-technique h3, .info-item-price h3 {
-            text-transform: uppercase;
-            font-weight: 200;
-            font-size: calc(1rem + 0.5vw);
-        }
-        .info-item-title p, .info-item-dimension p, .info-item-technique p, .info-item-price p {
-            font-weight: 900;
-            font-size: calc(0.5rem + 0.5vw);
-            text-wrap: nowrap;
-        }
-        .cart-main {
-            margin: 0;
-            padding: 0;
-            display: grid;
-            grid-auto-rows: max-content;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        .cart-container {
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: 250px, 3fr;
-            grid-gap: 25px;
-            width: 100vw;
-            height: 100vh;
-        }
-        .cart-item {
-            padding: 0;
-            margin: 0;
-            min-height: 250px;
-            min-width: 250px;
-        }
-        .cart-img {
-            height: 250px;
-            width: 250px;
-            background: #333;
-        }
-        .cart-text {
-            min-height: 250px;
-            background: #cfe;
-        }
+        
     </style>
     <script src="/static/script.js" defer type="module"></script>
 </head>
@@ -313,7 +20,7 @@
     <div id="root">
         <header>
             <nav id="header">
-
+                <a class="logoholder" href="/static/index.html"></a>
             </nav>    
         </header>        
         <main>
@@ -327,7 +34,7 @@
                             </div>
                             <div class="info-item-dimension">
                                 <h3>Dimension</h3>
-                                <p id="indo-dimension"></p>
+                                <p id="info-dimension"></p>
                             </div>
                             <div class="info-item-technique">
                                 <h3>Technique</h3>
@@ -378,15 +85,7 @@
                 </div>
             </section>
         </main>
-        <footer>
-            
-        </footer>
-
-
-
-
         </div>
-
     </div>
     
 </body>
