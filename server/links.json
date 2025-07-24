@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Az utálat fárasztó",
     "dimensions": "30 x 30",
-    "img": "../static/img/az_utalat_faraszto.jpg",
+    "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349240/az_utalat_faraszto_naoegp.jpg",
     "technique": "digital",
     "price": null
     },
@@ -11,7 +11,7 @@
     "id":"2",
     "title": "Élet flash",
     "dimensions": "30 x 30",
-    "img": "../static/img/eletflash.jpg",
+    "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349244/eletflash_cgdttb.jpg",
     "technique": "digital",
     "price": null
     },
@@ -19,7 +19,7 @@
     "id": "3",
     "title": "Elvonó",
     "dimensions": "30 x 30",
-    "img": "../static/img/elvono.jpg",
+    "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349242/elvono_din3tj.jpg",
     "technique": "digital",
     "price": null
     },
@@ -27,7 +27,7 @@
         "id":"4",
         "title": "Kilét",
         "dimensions": "30 x 30",
-        "img": "../static/img/kilet.jpg",
+        "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349245/kilet_f0xtmv.jpg",
         "technique": "digital",
         "price": null
         },
@@ -35,7 +35,7 @@
             "id":"5",
             "title": "Rendszer",
             "dimensions": "30 x 30",
-            "img": "../static/img/rendszer.jpg",
+            "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349243/rendszer_kx39xi.jpg",
             "technique": "digital",
             "price": null
             },
@@ -43,7 +43,7 @@
                 "id":"6",
                 "title": "Szafari",
                 "dimensions": "30 x 30",
-                "img": "../static/img/szafari.jpg",
+                "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349245/szafari_sv489j.jpg",
                 "technique": "digital",
                 "price": null
                 }
