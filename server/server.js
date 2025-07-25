@@ -60,6 +60,8 @@ app.delete('/api/cart/del/:id', (req, res) => {
         }
         const index = cart.indexOf(productToDel)
         cart.splice(index, 1);
+        console.log(cart);
+        res.status(200).send(productToDel);
 
 })
 

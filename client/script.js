@@ -33,6 +33,7 @@ function addNavButtons () {
   const cartPage = document.getElementById('cart-section');
   cartPage.style.display = 'block';
   displayCartPage()
+  
 }
 function showHomePage(){
     const section = document.querySelectorAll("section");
@@ -148,9 +149,16 @@ function createCartItem(item){
     img.src = item.img;
     const title = document.createElement('h4');
     title.textContent = item.title;
+    const price = document.createElement('h5');
+    price.textContent = item.price;
+
     const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-button')
     deleteButton.id = item.id;
     deleteButton.textContent = 'Remove'
+    deleteButton.addEventListener('click', async () => {
+        await removeBtnCallBack(deleteButton.id)
+    });
     cartItem.append(img, title, deleteButton);
     rootContainer.appendChild(cartItem)
     console.log('Cart div?:', JSON.stringify(cartItem));
@@ -173,6 +181,34 @@ async function displayCartPage(){
     }
 }
 
+async function removeBtnCallBack(itemAndButtonId) {
+    const response = await fetch(`/api/cart/del/${itemAndButtonId}`,{
+        method: "DELETE"
+    })
+    if (response.ok){
+        const removedItem = await response.json();
+        console.log('Removed item:', removedItem);
+        const cartContainer = document.querySelector('.cart-container');
+        const itemToRemove = cartContainer.querySelector(`.cart-item img[src="${removedItem.img}"]`);
+        if (itemToRemove) {
+            itemToRemove.parentElement.remove(); // Remove the parent div of the image, which is the cart item div
+        } else {
+            console.error('Item to remove not found in the cart container');      
+        }               
+        // TODO: 
+        // elete corresponding Dom element from cart page
+    }   
+
+
+}
+// function removeButtonsFunctionality() {
+//     const removeButtons = document.querySelectorAll('.delete-button');
+//     console.log(removeButtons)
+//     removeButtons.forEach((button) => {
+        
+//     })  
+// }
+
 async function main() {
   const products =  await fetchData('/api/products');
   addNavButtons();
@@ -181,6 +217,8 @@ async function main() {
   productDiv.innerHTML = await fetchProductHTML('1'); 
   await productListFetching(products);
   addingBtnFunctionality()
+  
+  
   showHomePage();
 
 

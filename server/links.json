@@ -5,7 +5,7 @@
     "dimensions": "30 x 30",
     "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349240/az_utalat_faraszto_naoegp.jpg",
     "technique": "digital",
-    "price": null
+    "price": "$150.000"
     },
     {
     "id":"2",
@@ -13,7 +13,7 @@
     "dimensions": "30 x 30",
     "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349244/eletflash_cgdttb.jpg",
     "technique": "digital",
-    "price": null
+    "price": "$70.000"
     },
     {
     "id": "3",
@@ -21,7 +21,7 @@
     "dimensions": "30 x 30",
     "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349242/elvono_din3tj.jpg",
     "technique": "digital",
-    "price": null
+    "price": "$45.000"
     },
     {
         "id":"4",
@@ -29,7 +29,7 @@
         "dimensions": "30 x 30",
         "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349245/kilet_f0xtmv.jpg",
         "technique": "digital",
-        "price": null
+        "price": "$60.000"
         },
         {
             "id":"5",
@@ -37,7 +37,7 @@
             "dimensions": "30 x 30",
             "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349243/rendszer_kx39xi.jpg",
             "technique": "digital",
-            "price": null
+            "price": "$100.000"
             },
             {
                 "id":"6",
@@ -45,6 +45,6 @@
                 "dimensions": "30 x 30",
                 "img": "https://res.cloudinary.com/dxnaapaa3/image/upload/v1753349245/szafari_sv489j.jpg",
                 "technique": "digital",
-                "price": null
+                "price": "$95.000"
                 }
 ]
