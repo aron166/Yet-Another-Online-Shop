@@ -1,50 +1,58 @@
- [
-    {
+[
+  {
     "id": "1",
     "title": "Az utálat fárasztó",
     "dimensions": "30 x 30",
     "img": "https://mega.nz/file/Eh8WHa7T#UXwrCbFAm3AjbsUUSNEIHJlZJkiPenyt20TGLXDhld0",
     "technique": "digital",
     "price": null
-    },
-    {
-    "id":"2",
+  },
+  {
+    "id": "2",
     "title": "Élet flash",
     "dimensions": "30 x 30",
     "img": "https://mega.nz/file/0sUQzAhT#-YC3kl5w8RIjF2I4bzMmR0S2YFWxd-hqBs00MNclRJY",
     "technique": "digital",
     "price": null
-    },
-    {
+  },
+  {
     "id": "3",
     "title": "Elvonó",
     "dimensions": "30 x 30",
     "img": "../static/img/elvono.jpg",
     "technique": "digital",
     "price": null
-    },
-    {
-        "id":"4",
-        "title": "Kilét",
-        "dimensions": "30 x 30",
-        "img": "../static/img/kilet.jpg",
-        "technique": "digital",
-        "price": null
-        },
-        {
-            "id":"5",
-            "title": "Rendszer",
-            "dimensions": "30 x 30",
-            "img": "../static/img/rendszer.jpg",
-            "technique": "digital",
-            "price": null
-            },
-            {
-                "id":"6",
-                "title": "Szafari",
-                "dimensions": "30 x 30",
-                "img": "../static/img/szafari.jpg",
-                "technique": "digital",
-                "price": null
-                }
+  },
+  {
+    "id": "4",
+    "title": "Kilét",
+    "dimensions": "30 x 30",
+    "img": "../static/img/kilet.jpg",
+    "technique": "digital",
+    "price": null
+  },
+  {
+    "id": "5",
+    "title": "Rendszer",
+    "dimensions": "30 x 30",
+    "img": "../static/img/rendszer.jpg",
+    "technique": "digital",
+    "price": null
+  },
+  {
+    "id": "6",
+    "title": "Szafari",
+    "dimensions": "30 x 30",
+    "img": "../static/img/szafari.jpg",
+    "technique": "digital",
+    "price": null
+  },
+  {
+    "id": "7",
+    "title": "test",
+    "dimensions": "30 x 30",
+    "img": "test",
+    "technique": "Digital",
+    "price": "20000"
+  }
 ]

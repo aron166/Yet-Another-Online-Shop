@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import products from './links.json' with  {type : 'json'};
 import { readFile, readFileSync } from 'fs';
 
-
 console.log(products)
 const app = express();
 app.use(express.json());
@@ -32,6 +31,10 @@ app.get('/api/product/:id', (req, res) => {
     }
 
     res.json(result);
+});
+
+app.get('/static/edit', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'client', 'editor.html'))
 });
 
 app.post('/api/cart', (req, res) => {
@@ -63,7 +66,33 @@ app.delete('/api/cart/del/:id', (req, res) => {
 
 })
 
-
+app.post('/edit', (req, res) => {
+    try {
+        const { title, dimensions, technique, price, img } = req.body;
+    
+        const filePath = path.join(__dirname, 'links.json');
+        const rawData = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(rawData);
+    
+        const newProduct = {
+          id: String(data.length + 1),
+          title,
+          dimensions,
+          img,
+          technique,
+          price
+        };
+    
+        data.push(newProduct);
+        readFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+    
+        res.json(newProduct);
+    
+      } catch (err) {
+        console.error('💥 Server error in /edit:', err);
+        res.status(500).send('Internal server error');
+      }
+    });
 
 
 

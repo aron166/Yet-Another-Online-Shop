@@ -25,6 +25,9 @@ function addNavButtons () {
     const adminPublicBtn = document.createElement('button');
     adminPublicBtn.textContent = 'Admin Mode';
     adminPublicBtn.id = 'admin-public';
+    adminPublicBtn.addEventListener('click', () => {
+        window.location.href = '/static/editor.html';
+    });
     navBarDiv.appendChild(adminPublicBtn);
 }
  function showcart() {
