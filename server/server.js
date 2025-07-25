@@ -89,7 +89,7 @@ app.post('/edit', (req, res) => {
         res.json(newProduct);
     
       } catch (err) {
-        console.error('💥 Server error in /edit:', err);
+        console.error('Server error in /edit:', err);
         res.status(500).send('Internal server error');
       }
     });
